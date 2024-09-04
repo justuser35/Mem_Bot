@@ -7,10 +7,7 @@ from disnake.ext import tasks
 from io import BytesIO
 import os
 
-# ЗАДАЧИ
 
-#1. каждую минуту проверять количество участников и изменять название голосового канала
-#2.
 
 
 VK_ACCESS_TOKEN = '5efe4dc85efe4dc85efe4dc8405de7f4f055efe5efe4dc83864a2ad96aac8e554743ff3'
