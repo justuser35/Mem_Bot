@@ -8,8 +8,6 @@ from io import BytesIO
 import os
 
 
-
-
 VK_ACCESS_TOKEN = '5efe4dc85efe4dc85efe4dc8405de7f4f055efe5efe4dc83864a2ad96aac8e554743ff3'
 
 bot = commands.Bot(command_prefix="!", intents=disnake.Intents.all(), test_guilds=[1257681163707748412])
