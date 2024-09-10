@@ -1,15 +1,21 @@
 from disnake.ext import commands
 import disnake
 from bs4 import BeautifulSoup as bs
+import requests
 
+html_text = requests.get("https://habr.com/ru/news/")
 list = []
+soup = bs(html_text, 'lxml')
+articles = soup.find_all('a', class_="tm-title__link")
+
+# сюда надо бд как у волохова прикрутить и будем хранить старые статьи потом при обновлении страницы будем сравнивать значения из базы и тут, если разные то публикуем.
 
 # get text y статей
-soup = bs(html_doc, 'html.parser')
-articles = bs.find_all('a', class_="tm-title__link")
 
-for link in articles:
-    list += статья + link.get('href')
+
+for article in articles:
+    title = article.find("span").text
+    list += title + article.get('href') # name and link
 
 
 class News(commands.Cog):
