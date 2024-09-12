@@ -3,12 +3,12 @@ import disnake
 from bs4 import BeautifulSoup as bs
 import requests
 
-html_text = requests.get("https://habr.com/ru/news/")
+html_text = requests.get("https://habr.com/ru/news/").text
 list = []
 soup = bs(html_text, 'lxml')
 articles = soup.find_all('a', class_="tm-title__link")
 
-# сюда надо бд как у волохова прикрутить и будем хранить старые статьи потом при обновлении страницы будем сравнивать значения из базы и тут, если разные то публикуем.
+# сюда надо бд прикрутить и будем хранить старые статьи потом при обновлении страницы будем сравнивать значения из базы и тут, если разные то публикуем.
 
 # get text y статей
 
